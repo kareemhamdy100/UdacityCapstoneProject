@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Docker-lint') {
       steps {
-        sh 'hadolint Dockerfile'
+        sh ' sudo hadolint Dockerfile'
       }
     }
 
