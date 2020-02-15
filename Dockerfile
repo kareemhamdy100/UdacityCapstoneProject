@@ -1,7 +1,7 @@
 FROM node:alpine
 
-asssssssssss
-WORKDIR '/app'
+sdsads
+WORKDIR /app
 
 COPY ./package.json ./
 
