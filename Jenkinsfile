@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh '''
         ./run_docker.sh
-        sudo  docker exec -it udacityCapstone npm test
+          docker exec -it udacityCapstone npm test
         '''
       }
     }
