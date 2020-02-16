@@ -14,7 +14,7 @@ pipeline {
     }
      stage('Test') {
       steps {
-        sh 'docker exec -it udacityCapstone npm test'
+        sh 'docker exec -it udacitycapstone npm test'
       }
     }
   
