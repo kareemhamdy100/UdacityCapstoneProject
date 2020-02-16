@@ -8,7 +8,7 @@ const api = supertest(app);
 
 test('test get ', async () => {
     jest.setTimeout(100);
-     await api.get('/').expect(201)
+     await api.get('/').expect(200)
 
 });
 

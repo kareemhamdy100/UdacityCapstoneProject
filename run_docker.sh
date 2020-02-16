@@ -11,5 +11,5 @@
  docker image ls
 # Step 3: 
 # Run flask app
- docker run udacitycapstone npm run test
+
 
