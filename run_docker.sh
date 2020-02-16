@@ -13,3 +13,5 @@
 # Run flask app
  docker run -p 80:3000 udacitycapstone
 
+ docker exec -it udacitycapstone npm test
+

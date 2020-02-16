@@ -7,18 +7,11 @@ pipeline {
       }
     }
 
-    stage('Build') {
+    stage('Build-test') {
       steps {
         sh './run_docker.sh'
       }
     }
-     stage('Test') {
-      steps {
-        sh 'docker exec -it udacitycapstone npm test'
-      }
-    }
-  
-  
 
   }
 }
