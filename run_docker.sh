@@ -11,7 +11,5 @@
  docker image ls
 # Step 3: 
 # Run flask app
- docker run -p 80:3000 udacitycapstone --name test
-
- docker exec -it test npm test
+ docker run udacitycapstone npm run test
 
