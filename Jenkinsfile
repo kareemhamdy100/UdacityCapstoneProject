@@ -8,9 +8,10 @@ pipeline {
     }
     stage('Docker-lint') {
       steps {
-         hadolint Dockerfile
+        sh '/home/ubuntu/.linuxbrew/bin/hadolint Dockerfile'
       }
     }
 
   }
 }
+
