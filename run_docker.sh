@@ -4,12 +4,12 @@
 
 # Step 1:
 # Build image and add a descriptive tag
- docker build --tag=udacityCapstone .
+ docker build --t udacitycapstone .
 
 # Step 2: 
 # List docker images
  docker image ls
 # Step 3: 
 # Run flask app
- docker run -p 80:3000 udacityCapstone
+ docker run -p 80:3000 udacitycapstone
 
