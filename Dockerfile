@@ -1,6 +1,6 @@
 FROM node:alpine
 
-sdsadsaa
+
 WORKDIR /app
 
 COPY ./package.json ./
