@@ -9,17 +9,12 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh '''
-        ./run_docker.sh
-          docker exec -it udacityCapstone npm test
-        '''
+        sh './run_docker.sh'
       }
     }
      stage('Test') {
       steps {
-        sh '''
-          docker exec -it udacityCapstone npm test
-        '''
+        sh 'docker exec -it udacityCapstone npm test'
       }
     }
   
