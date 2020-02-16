@@ -1,16 +1,21 @@
 pipeline {
   agent any
   stages {
-       stage('Build') {
-      steps {
-        sh 'echo "hello world"'
-      }
-    }
-    stage('Docker-lint') {
+      stage('Docker-lint') {
       steps {
         sh '/home/ubuntu/.linuxbrew/bin/hadolint Dockerfile'
       }
     }
+
+    stage('Build') {
+      steps {
+        sh '''
+        ./run_docker.sh
+        sudo  docker exec -it udacityCapstone npm test
+        '''
+      }
+    }
+  
 
   }
 }
