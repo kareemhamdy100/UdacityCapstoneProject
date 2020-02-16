@@ -15,6 +15,14 @@ pipeline {
         '''
       }
     }
+     stage('Test') {
+      steps {
+        sh '''
+          docker exec -it udacityCapstone npm test
+        '''
+      }
+    }
+  
   
 
   }
