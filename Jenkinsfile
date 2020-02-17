@@ -50,6 +50,16 @@ pipeline {
         withAWS(credentials: 'udacity_capstone'){
          sh 'kubectl apply -f blue_controller.json'
          sh 'kubectl apply -f green_controller.json'
+         sh 'kubectl get pods'
+        }
+       
+      }
+    }
+     stage('lunch_load_blancer') {
+      steps {
+        withAWS(credentials: 'udacity_capstone'){
+         sh 'kubectl apply -f loadBlancer.json'
+         sh 'kubectl get services -o wide'
         }
        
       }
