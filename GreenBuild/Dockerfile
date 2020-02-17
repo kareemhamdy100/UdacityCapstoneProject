@@ -1,7 +1,5 @@
 FROM node:alpine
 
-falied on linting stage
-
 WORKDIR /app
 
 COPY ./package.json ./
