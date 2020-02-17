@@ -22,8 +22,15 @@ pipeline {
     stage('push-docker-images') {
       steps {
         withDockerRegistry([credentialsId: "dockerHup", url:""]){
-              sh  './BlueBuild/docker_upload.sh'
-              sh  './GreenBuild/docker_upload.sh'
+            sh  '''
+                    docker tag blueudacitycapstone kareem5020/blueudacitycapstone
+                    docker push kareem5020/blueudacitycapstone
+                  '''
+
+              sh  '''
+                    docker tag greenudacitycapstone kareem5020/greenudacitycapstone
+                    docker push kareem5020/greenudacitycapstone
+                  '''
         }
       }
     }
