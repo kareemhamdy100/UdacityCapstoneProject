@@ -19,6 +19,14 @@ pipeline {
         sh  'docker run greenudacitycapstone npm run test'
       }
     }
+    stage('push-docker-images') {
+      steps {
+        withDockerRegistry([credentialsId: "dockerHup", ""]){
+              sh  './BlueBuild/docker_upload.sh'
+              sh  './GreenBuild/docker_upload.sh'
+        }
+      }
+    }
   }
 }
 
