@@ -3,8 +3,8 @@ pipeline {
   stages {
       stage('Docker-lint') {
       steps {
-        sh '/home/ubuntu/.linuxbrew/bin/hadolint /BlueBuild/Dockerfile'
-        sh '/home/ubuntu/.linuxbrew/bin/hadolint /GreenBuild/Dockerfile'
+        sh '/home/ubuntu/.linuxbrew/bin/hadolint ./BlueBuild/Dockerfile'
+        sh '/home/ubuntu/.linuxbrew/bin/hadolint ./GreenBuild/Dockerfile'
       }
     }
     stage('Build') {
