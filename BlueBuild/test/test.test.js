@@ -7,12 +7,12 @@ const api = supertest(app);
 
 
 test('test get ', async () => {
-    jest.setTimeout(100);
+    jest.setTimeout(300);
      await api.get('/').expect(200)
 
 });
 
 
 afterAll(async () => {
-    await new Promise(resolve => setTimeout(() => resolve(), 50)); // avoid jest open handle error
+    await new Promise(resolve => setTimeout(() => resolve(), 100)); // avoid jest open handle error
   });
