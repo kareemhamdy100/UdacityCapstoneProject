@@ -36,10 +36,13 @@ pipeline {
     }
      stage('update-configFile') {
       steps {
-        sh '''
-              aws eks --region us-east-1 update-kubeconfig --name udacityCapstoneProject
-              kubectl get svc
-        '''
+        withAWS(credentials: 'udacity_capstone'){
+         sh '''
+                aws eks --region us-east-1 update-kubeconfig --name udacityCapstoneProject
+                 kubectl get svc
+            '''
+        }
+       
       }
     }
   }
