@@ -25,7 +25,6 @@
                    "image":"kareem5020/greenudacitycapstone",
                    "ports":[
                       {
-                         "name":"http-server",
                          "containerPort":3000
                       }
                    ]
