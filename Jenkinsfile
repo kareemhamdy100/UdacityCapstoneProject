@@ -3,22 +3,26 @@ pipeline {
   stages {
       stage('Docker-lint') {
       steps {
-        sh '/home/ubuntu/.linuxbrew/bin/hadolint Dockerfile'
+        sh '/home/ubuntu/.linuxbrew/bin/hadolint /BlueBuild/Dockerfile'
+        sh '/home/ubuntu/.linuxbrew/bin/hadolint /GreenBuild/Dockerfile'
       }
     }
-
     stage('Build') {
       steps {
-        sh './run_docker.sh'
+        sh 'docker build -t blueudacitycapstone ./BlueBuild'
+      }
+      steps {
+        sh 'docker build -t greenudacitycapstone ./GreenBuild'
       }
     }
-
     stage('test') {
       steps {
-        sh  ' docker run udacitycapstone npm run test'
+        sh  'docker run blueudacitycapstone npm run test'
+      }
+      steps {
+        sh  'docker run greenudacitycapstone npm run test'
       }
     }
-
   }
 }
 

@@ -1,0 +1,14 @@
+{
+  "name": "udacitycapstone",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "test": "NODE_ENV=test jest --verbose --runInBand --detectOpenHandles"
+  },
+  "dependencies": {
+    "express": "~4.16.1",
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
+  }
+}
