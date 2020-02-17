@@ -10,16 +10,12 @@ pipeline {
     stage('Build') {
       steps {
         sh 'docker build -t blueudacitycapstone ./BlueBuild'
-      }
-      steps {
         sh 'docker build -t greenudacitycapstone ./GreenBuild'
       }
     }
     stage('test') {
       steps {
         sh  'docker run blueudacitycapstone npm run test'
-      }
-      steps {
         sh  'docker run greenudacitycapstone npm run test'
       }
     }
