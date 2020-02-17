@@ -45,6 +45,16 @@ pipeline {
        
       }
     }
+     stage('deploy-blue-green') {
+      steps {
+        withAWS(credentials: 'udacity_capstone'){
+         sh 'kubectl apply -f ./blue-controller.json'
+
+         sh 'kubectl apply -f ./green-controller.json'
+        }
+       
+      }
+    }
   }
 }
 
