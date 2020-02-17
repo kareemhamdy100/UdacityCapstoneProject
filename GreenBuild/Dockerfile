@@ -1,5 +1,6 @@
 FROM node:alpine
 
+falied on linting stage
 
 WORKDIR /app
 
