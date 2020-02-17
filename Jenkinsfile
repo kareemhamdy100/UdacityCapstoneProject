@@ -21,7 +21,7 @@ pipeline {
     }
     stage('push-docker-images') {
       steps {
-        withDockerRegistry([credentialsId: "dockerHup", ""]){
+        withDockerRegistry([credentialsId: "dockerHup", url:""]){
               sh  './BlueBuild/docker_upload.sh'
               sh  './GreenBuild/docker_upload.sh'
         }
