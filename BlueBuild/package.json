@@ -7,7 +7,7 @@
     "test": "NODE_ENV=test jest --verbose --runInBand --detectOpenHandles"
   },
   "dependencies": {
-    "express": "~4.16.1",
+    "express": "~4.17.3",
     "jest": "^24.9.0",
     "supertest": "^4.0.2"
   }
